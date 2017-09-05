@@ -1,24 +1,59 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: ture|
+|nickname|string|null: false|
+|profile_image|string||
+|header_image|string||
+|email|varchar|null: false, unique: true|
+|password|varchar|null: false, unique: true|
 
-* Ruby version
+### Association
+-has_many :tweets
+-has_many :likes
+-has_many :like_tweets, through: :likes, source: :tweet
+-has_many :following, through: :active_relationships, source: :followed
+-has_many :followers, through: :passive_relationships, source: :follower
+-has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+-has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 
-* System dependencies
+___________________________________________________________
 
-* Configuration
+## tweets table
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|content|text|null: false|
+|image|string||
+|likes_count|integer||
 
-* Database initialization
+### Association
+-belongs_to :user
+-has_many :likes, dependent: :destroy
+___________________________________________________________
 
-* How to run the test suite
+## relationships table
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|follower_id|integer|null: false|
+|followed_id|integer|null: false|
 
-* Deployment instructions
+### Association
+-belongs_to :follower, class_name: "User"
+-belongs_to :followed, class_name: "User"
+___________________________________________________________
 
-* ...
+## likes table
+
+|Column|Type|Options|
+|------|----|-------|
+|user|string|null: false, foreign_key: true|
+|tweet|string|null: false, foreign_key: true|
+
+### Association
+-belongs_to :user
+-belongs_to :tweet
