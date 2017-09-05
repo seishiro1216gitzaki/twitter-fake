@@ -12,12 +12,12 @@
 |password|varchar|null: false, unique: true|
 
 ### Association
--has_many :tweets
--has_many :likes
--has_many :like_tweets, through: :likes, source: :tweet
--has_many :following, through: :active_relationships, source: :followed
--has_many :followers, through: :passive_relationships, source: :follower
--has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+-has_many :tweets  
+-has_many :likes  
+-has_many :like_tweets, through: :likes, source: :tweet  
+-has_many :following, through: :active_relationships, source: :followed  
+-has_many :followers, through: :passive_relationships, source: :follower  
+-has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy  
 -has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 
 ___________________________________________________________
@@ -31,7 +31,7 @@ ___________________________________________________________
 |likes_count|integer||
 
 ### Association
--belongs_to :user
+-belongs_to :user  
 -has_many :likes, dependent: :destroy
 ___________________________________________________________
 
@@ -43,7 +43,7 @@ ___________________________________________________________
 |followed_id|integer|null: false|
 
 ### Association
--belongs_to :follower, class_name: "User"
+-belongs_to :follower, class_name: "User"  
 -belongs_to :followed, class_name: "User"
 ___________________________________________________________
 
@@ -55,5 +55,5 @@ ___________________________________________________________
 |tweet|string|null: false, foreign_key: true|
 
 ### Association
--belongs_to :user
+-belongs_to :user  
 -belongs_to :tweet
