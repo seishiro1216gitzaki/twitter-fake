@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: twitter-fake_production
-  username: twitter-fake
-  password: <%= ENV['TWITTER-FAKE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
