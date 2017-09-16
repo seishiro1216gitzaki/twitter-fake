@@ -1,0 +1,79 @@
+.sidebar-left{
+        float: left;
+        width: 290px;
+        height: 290px;
+
+        .profile-card{
+          margin-bottom: 10px;
+          background-color: black;
+        }
+        .profile-content{
+          background-color: #fff;
+
+          .profile-card-me-img{
+            height: 20px;
+            width: 20px;
+          }
+
+          .profile-card-user-fields{
+            position: absolute;
+            top: 103px;
+            left: 90px;
+            width: 185px;
+          }
+
+          .ProfileCardStatus{
+            padding: 16px;
+            margin-top: 30px;
+
+            .ProfileCardStatus-statuslist{
+              box-sizing: border-box;
+              display: table;
+              margin: 0;
+              min-width: 100%;
+              padding: 0;
+            }
+
+              .ProfileCardStatus-status{
+                float: left;
+                padding-right: 10px;
+
+                  .u-block{
+                    font-size: 12px;
+                    display: block;
+                  }
+              }
+          }
+        }
+        .follow-requet{
+          margin-bottom: 10px;
+
+          .follow-request-btn{
+            background-color: #fff;
+            border: 1px solid #03F754;
+            font-weight: bold;
+            border-radius: 100px;
+          }
+        }
+        .trends{
+          background-color: #fff;
+          border: 1px solid #fff;
+          padding: 15px;
+
+          .trends-inner-header{
+            line-height: 20px;
+            margin-bottom: 10px;
+          }
+          .trends-inner-list{
+            .torends-name{
+              line-height: 17px;
+            margin-bottom: 10px;
+            }
+            .trends-count{
+              line-height: 10px;
+              font-size: 10px;
+            }
+          }
+        }
+
+      }

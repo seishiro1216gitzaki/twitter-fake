@@ -1,0 +1,108 @@
+.tweet-main{
+  float: left;
+  width: 590px;
+  margin: 0 10px;
+  .tweet-box{
+    border: 1px solid #e6ecf0;
+    background-color: #fff;
+    .tweet-user{
+      margin: 10px 12px;
+      .profile-image{
+        height: 10px;
+        width: 10px;
+        background-color: black;
+        position: relative;
+        top: 10px;
+        left: 5px;
+      }
+      .tweet-form{
+        margin-left: 56px;
+        .tweet-type{
+        background: #fff;
+        border: 1px solid #e6ecf0;
+        border-radius: 8px;
+        line-height: 20px;
+        padding: 0 250px 0 10px;
+        }
+      }
+    }
+  }
+  .tweet-nofitication{
+    font-size: 20px;
+    color: red;
+    background-color: #fff;
+    border: 1px solid #e6ecf0;
+    }
+  .tweet{
+    border: 1px solid #e6ecf0;
+    background-color: #fff;
+    position: relative;
+    .profile-pic{
+      height: 10px;
+      width: 10px;
+      background-color: black;
+      float:left;
+      margin-right: 20px;
+    }
+    .user-info{
+      @include clearfix();
+      margin-left: 50px;
+      .user-name{
+        float:left;
+      }
+      .user-nickname{
+        float:left;
+      }
+      .time{
+        float:left;
+      }
+    }
+    .tweet-text{
+      margin-left: 50px;
+    }
+    .tweet-footer{
+      @include clearfix();
+      margin-left: 50px;
+        &__reply{
+            &--button{
+              float: left;
+            }
+            &--count{
+              float:left;
+              margin: 0 5px 0 5px;
+            }
+        }
+        &__retweet{
+          float: left;
+          &--button{
+              float: left;
+            }
+            &--count{
+              float:left;
+              margin: 0 5px 0 5px;
+            }
+        }
+        &__favorite{
+          float: left;
+          &--button{
+              float: left;
+            }
+            &--count{
+              float:left;
+              margin: 0 5px 0 5px;
+            }
+        }
+        &__dm{
+          float: left;
+          &--button{
+              float: left;
+            }
+            &--count{
+              float:left;
+              margin: 0 5px 0 5px;
+            }
+        }
+    }
+
+  }
+}

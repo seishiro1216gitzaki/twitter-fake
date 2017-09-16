@@ -1,0 +1,50 @@
+.sidebar-right{
+  float: left;
+  .sidebar-right--top{
+    margin-bottom: 10px;
+    border: 1px solid #e6ecf0;
+    .sidebar-right--top--recomend{
+      background-color: #fff;
+      padding: 15px;
+      line-height: 16px;
+      @include clearfix();
+      .recomend-user{
+        float: left;
+      }
+      .update{
+        list-style: none;
+        float: left;
+      }
+      .see{
+        list-style: none;
+        float: left;
+      }
+    }
+    .sidebar-right--top--list{
+      background-color: #fff;
+    }
+    .sidebar-right--top--find{
+      border: 1px solid #e6ecf0;
+      background-color: #fff;
+      font-size: 10px;
+    }
+  }
+  .sidebar-right--bottom{
+    .sidebar-right--bottom--list{
+      border: 1px solid #e6ecf0;
+      background-color: #fff;
+      .about{
+        list-style: none;
+      }
+    }
+    .sidebar-right--bottom--advertisement{
+      border: 1px solid #e6ecf0;
+      background-color: #fff;
+    }
+  }
+}
+
+  // .sidebar-right--top__recomend
+  // .sidebar-right--top--list
+  //   .sidebar-right--top--list--user
+  // .sidebar-right--top--find
