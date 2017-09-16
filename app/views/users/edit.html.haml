@@ -1,0 +1,15 @@
+%h2 Edit Account
+%h3 アカウントの編集
+
+= link_to "トップページに戻る", :back, class: 'btn'
+= form_for(current_user) do |f|
+  .field
+    = f.label :nickname
+    %br/
+    = f.text_field :nickname, autofocus: true
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email
+  .actions
+    = f.submit "update"
