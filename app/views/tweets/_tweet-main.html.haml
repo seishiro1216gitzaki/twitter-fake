@@ -1,0 +1,54 @@
+.tweet-main
+  .tweet-box
+    .tweet-user
+      .profile-image
+      .tweet-form
+        %input{placeholder: "今何してる？", name: "text", class: "tweet-type"}
+        %input{type: "submit", class: "submit", name: "commit", value: "Tweet"}
+  .tweet-container
+    .new-tweet-bar
+      .tweet-nofitication
+        新着ツイートなし
+    .tweet-list
+      = render 'tweet'
+      = render 'tweet'
+      = render 'tweet'
+      = render 'tweet'
+      = render 'tweet'
+      = render 'tweet'
+      = render 'tweet'
+      .tweet
+        .profile-pic
+          %img{:alt => "", :src => "foo.png"}/
+        .user-info
+          .user-name
+            jojo
+          .user-nickname
+            @jojojojo
+          .time
+            12345日
+        .tweet-text
+          今年も残り4か月！
+        .tweet-pic
+        .tweet-footer
+          .tweet-footer__reply
+            .tweet-footer__reply--button
+              %i.fa.fa-comment-o
+            .tweet-footer__reply--count
+              12
+          .tweet-footer__retweet
+            .tweet-footer__retweet--button
+              %i.fa.fa-retweet
+            .tweet-footer__retweet--count
+              43
+          .tweet-footer__favorite
+            .tweet-footer__favorite--button
+              %i.fa.fa-thumbs-o-up
+            .tweet-footer__favorite--count
+              666
+          .tweet-footer__dm
+            .tweet-footer__dm--button
+              %i.fa.fa-envelope-o
+            .tweet-footer__dm--count
+              888
+
