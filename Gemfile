@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'erb2haml'
   gem 'haml-rails'
+  gem 'font-awesome-rails'
 end
 
 group :development do
