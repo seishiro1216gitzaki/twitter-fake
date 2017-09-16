@@ -1,6 +1,6 @@
 %h2 Edit Account
 %h3 アカウントの編集
-
+= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
 = link_to "トップページに戻る", :back, class: 'btn'
 = form_for(current_user) do |f|
   .field
