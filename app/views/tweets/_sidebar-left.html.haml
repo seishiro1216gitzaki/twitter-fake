@@ -10,7 +10,9 @@
           Seeeesh!!!
           %i.fa.fa-lock
         .profile-card-idname
-          @Seeeesh
+          %a.user-edit
+            = link_to users_path(current_user) do
+              @seeeesh
       .ProfileCardStatus
         %ul.ProfileCardStatus-statuslist
           %li.ProfileCardStatus-status
