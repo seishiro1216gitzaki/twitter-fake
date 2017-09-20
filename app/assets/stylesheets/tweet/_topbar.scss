@@ -4,6 +4,7 @@
   top: 0;
   right: 0;
   left: 0;
+  z-index: 5000;
 
     .topbar-nav{
       border-bottom: 1px solid rgba(0,0,0,0.25);
@@ -133,7 +134,7 @@
                     .fa.fa-search{
                       position: absolute;
                       top: 15px;
-                      right: 200px;
+                      right: 220px;
                       height: 26px;
                       width: 26px;
 
