@@ -1,0 +1,259 @@
+.page-container{
+  margin: 46px 0 0;
+  height: 100%;
+  .ProfileCanopy-header-box{
+    height: 320px;
+    padding-bottom: 70px;
+    .ProfileCanopy-header-box--inner{
+      height: 100%;
+      width: 100%;
+      .ProfileCanopy-header{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 320px;
+        width: 100%;
+        background-color: green;
+        .AppContainer{
+          height: 100%;
+          position: relative;
+          max-width: 1190px;
+          margin: 0 auto;
+          .ProfileCanopy-avatar{
+            bottom: -87px;
+            left: 10px;
+            position: absolute;
+            transition: bottom .3s;
+            z-index: 3;
+            .ProfileAvatar{
+              background: #fff;
+              border: 5px solid #fff;
+              border-radius: 50%;
+              height: 200px;
+              position: relative;
+              width: 200px;
+
+            }
+          }
+        }
+      }
+    }
+    .navBar-container{
+      max-width: 1190px;
+      margin: 0 auto;
+      .navBar-container--child{
+        margin: 0 -5px;
+        .Profile-nav{
+          margin-left: 30%;
+          background-color: red;
+          height: 60px;
+          width: 100%;
+          .Profile-nav--item{
+            display: inline-block;
+            .ProfileNav-stat{
+              height: 60px;
+              border-bottom: 0 solid;
+              display: block;
+              line-height: 1;
+              padding: 14px 15px 7px;
+              box-sizing: border-box;
+              .ProfaileNav-label{
+                font-weight: bold;
+                font-size: 12px;
+                color: #657786;
+                @include clearfix();
+              }
+              .ProfaileNav-value{
+                font-weight: bold;
+                padding-top: 3px;
+              }
+              .Profile-nav--item__UserEdit{
+                background-color: #fff;
+                box-sizing: border-box;
+                height: 59px;
+                padding: 12px 0 0 2px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                .edit-button{
+                  border-radius: 100px;
+                  box-shadow: none;
+                  cursor: pointer;
+                  font-size: 14px;
+                  font-weight: bold;
+                  line-height: 20px;
+                  padding: 6px 16px;
+                  position: relative;
+                  text-align: center;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .AppContainer{
+    max-width: 1190px;
+    margin: 0 auto;
+    height: 100%;
+    .AppContainerMain{
+      float: none;
+      height: 100%;
+      .AppContainerMain--left{
+        padding: 0 5px;
+        float: left;
+        width: 25%;
+        .LeftContent{
+          margin: 0 -5px;
+          .LeftContentInner{
+            padding: 0 5px;
+            .LeftContentInner--Profile{
+              margin: 35px 0 16px 0;
+              padding: 0 15px 0 15px;
+              .Profile-name{
+                line-height: 1px;
+              }
+              .Profile-nickname{
+                margin-bottom: 15px;
+              }
+              .Profile-location{
+                margin-bottom: 8px;
+              }
+              .profile-joinDate{
+                margin-bottom: 8px;
+              }
+            }
+            .LeftContentInner--Pic{
+              margin: 16px 0 16px 0;
+              padding: 0 15px 0 15px;
+              .PicHeader{
+                margin-bottom: 8px;
+                .PicHeader--icon{
+                  min-width: 18px;
+                }
+                .PicHeader--title{
+                  line-height: 1;
+                  padding-left: 22px;
+                }
+              }
+              .PicBox{
+                margin: -8px 0 0 -8px;
+                max-height: 178px;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+      .AppContainerMain--right{
+        padding: 0 5px;
+        float: left;
+        width: 55%;
+        .TweetsHeader{
+          margin-bottom: -1px;
+          @include clearfix();
+          .TweetsHeaderSpace{
+            margin-top: 0px;
+            .TweetsHeader-menu{
+              background-color: #fff;
+              border: 1px solid #e6ecf0;
+              margin-bottom: -1px;
+              @include clearfix();
+              &--tweets{
+                float: left;
+                padding: 15px 15px 12px;
+                font-weight: bold;
+              }
+              &--tweetsAndreply{
+                float: left;
+                padding: 15px 15px 12px;
+                font-weight: bold;
+              }
+              &--media{
+                float: left;
+                padding: 15px 15px 12px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .tweet{
+          border: 1px solid #e6ecf0;
+          background-color: #fff;
+          position: relative;
+          .profile-pic{
+            height: 10px;
+            width: 10px;
+            background-color: black;
+            float:left;
+            margin-right: 20px;
+          }
+          .user-info{
+            @include clearfix();
+            margin-left: 50px;
+            .user-name{
+              float:left;
+            }
+            .user-nickname{
+              float:left;
+            }
+            .time{
+              float:left;
+            }
+          }
+          .tweet-text{
+            margin-left: 50px;
+          }
+          .tweet-footer{
+            @include clearfix();
+            margin-left: 50px;
+              &__reply{
+                  &--button{
+                    float: left;
+                  }
+                  &--count{
+                    float:left;
+                    margin: 0 5px 0 5px;
+                  }
+              }
+              &__retweet{
+                float: left;
+                &--button{
+                    float: left;
+                  }
+                  &--count{
+                    float:left;
+                    margin: 0 5px 0 5px;
+                  }
+              }
+              &__favorite{
+                float: left;
+                &--button{
+                    float: left;
+                  }
+                  &--count{
+                    float:left;
+                    margin: 0 5px 0 5px;
+                  }
+              }
+              &__dm{
+                float: left;
+                &--button{
+                    float: left;
+                  }
+                  &--count{
+                    float:left;
+                    margin: 0 5px 0 5px;
+                  }
+              }
+          }
+
+        }
+      }
+    }
+  }
+}
+
