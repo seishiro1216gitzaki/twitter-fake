@@ -48,6 +48,7 @@ group :development, :test do
   gem 'font-awesome-rails'
   gem 'devise'
   gem 'pry-rails'
+  gem 'mini_magick'
 end
 
 group :development do
