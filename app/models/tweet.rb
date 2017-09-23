@@ -1,4 +1,6 @@
 class Tweet < ApplicationRecord
-  belogns_to :user
-  has_many :likes
+  belongs_to :user
+  mount_uploader :image, ImageUploader
+  validates :content, presence: true
+  validates :image, presence: true, if: -> { content.blank? }
 end
