@@ -5,12 +5,18 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new
+    @tweet = Tweet.new(create_params)
+    if @tweet.save
+      redirect_to tweets_path, notice: "メッセージが送信されました"
+    else
+      flash.now[:alert] = "メッセージが入力されていません"
+      render 'index'
+    end
   end
 
 
   private
-  def create_params
-    params.require(:tweet).permit(:content, :image)
-  end
+    def create_params
+      params.require(:tweet).permit(:content, :image).merge(user_id: current_user.id)
+    end
 end
