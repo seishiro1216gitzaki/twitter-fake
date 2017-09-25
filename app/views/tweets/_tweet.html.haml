@@ -1,15 +1,15 @@
 .tweet
   .profile-pic
-    %img{:alt => "", :src => "foo.png"}/
+    %img{:alt => "", :src => ""}/
   .user-info
     .user-name
-      jojo
+      = current_user.nickname
     .user-nickname
-      @jojojojo
+      = current_user.nickname
     .time
-      12345日
+      =@tweet.created_at
   .tweet-text
-    今年も残り4か月！
+    =@tweet.content
   .tweet-pic
   .tweet-footer
     .tweet-footer__reply

@@ -3,8 +3,13 @@
     .tweet-user
       .profile-image
       .tweet-form
-        %input{placeholder: "今何してる？", name: "text", class: "tweet-type"}
-        %input{type: "submit", class: "submit", name: "commit", value: "Tweet"}
+        = form_for @tweet do |f|
+          .tweet-form-top
+            = f.text_field :content, placeholder:'type a message', class:'tweet'
+          = f.label :image, class:'tweet-image' do
+            = f.file_field :image, class:'image'
+            %i.fa.fa-image
+          = f.submit "Send", class:'submit'
   .tweet-container
     .new-tweet-bar
       .tweet-nofitication
@@ -19,7 +24,7 @@
       = render 'tweet'
       .tweet
         .profile-pic
-          %img{:alt => "", :src => "foo.png"}/
+          %img{:alt => "", :src => ""}/
         .user-info
           .user-name
             jojo
