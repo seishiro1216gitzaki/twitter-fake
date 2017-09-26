@@ -1,7 +1,7 @@
 - @tweets.each do |tweet|
   .tweet
     .profile-pic
-      %img{:alt => "", :src => ""}/
+      = image_tag tweet.user.image, size: '50x50' if tweet.user.image.present?
     .user-info
       .user.user-name
         = tweet.user.name
