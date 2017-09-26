@@ -4,9 +4,9 @@
       %img{:alt => "", :src => ""}/
     .user-info
       .user.user-name
-        = current_user.nickname
+        = tweet.user.name
       .user.user-nickname
-        = "@#{current_user.nickname}"
+        = "@#{tweet.user.nickname}"
       .user.user-time
         = time_ago_in_words tweet.created_at
     .tweet-text
