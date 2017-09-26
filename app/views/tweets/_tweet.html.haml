@@ -1,34 +1,36 @@
-.tweet
-  .profile-pic
-    %img{:alt => "", :src => ""}/
-  .user-info
-    .user-name
-      = current_user.nickname
-    .user-nickname
-      = current_user.nickname
-    .time
-      =@tweet.created_at
-  .tweet-text
-    =@tweet.content
-  .tweet-pic
-  .tweet-footer
-    .tweet-footer__reply
-      .tweet-footer__reply--button
-        %i.fa.fa-comment-o
-      .tweet-footer__reply--count
-        12
-    .tweet-footer__retweet
-      .tweet-footer__retweet--button
-        %i.fa.fa-retweet
-      .tweet-footer__retweet--count
-        43
-    .tweet-footer__favorite
-      .tweet-footer__favorite--button
-        %i.fa.fa-thumbs-o-up
-      .tweet-footer__favorite--count
-        666
-    .tweet-footer__dm
-      .tweet-footer__dm--button
-        %i.fa.fa-envelope-o
-      .tweet-footer__dm--count
-        888
+- @tweets.each do |tweet|
+  .tweet
+    .profile-pic
+      %img{:alt => "", :src => ""}/
+    .user-info
+      .user.user-name
+        = current_user.nickname
+      .user.user-nickname
+        = "@#{current_user.nickname}"
+      .user.user-time
+        = time_ago_in_words tweet.created_at
+    .tweet-text
+      = tweet.content
+    .tweet-pic
+      = image_tag tweet.image, size: '200x200' if tweet.image.present?
+    .tweet-footer
+      .tweet-footer__reply
+        .tweet-footer__reply--button
+          %i.fa.fa-comment-o
+        .tweet-footer__reply--count
+          12
+      .tweet-footer__retweet
+        .tweet-footer__retweet--button
+          %i.fa.fa-retweet
+        .tweet-footer__retweet--count
+          43
+      .tweet-footer__favorite
+        .tweet-footer__favorite--button
+          %i.fa.fa-thumbs-o-up
+        .tweet-footer__favorite--count
+          666
+      .tweet-footer__dm
+        .tweet-footer__dm--button
+          %i.fa.fa-envelope-o
+        .tweet-footer__dm--count
+          888
