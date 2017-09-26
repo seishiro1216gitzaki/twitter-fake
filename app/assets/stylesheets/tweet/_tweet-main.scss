@@ -47,14 +47,16 @@
     .user-info{
       @include clearfix();
       margin-left: 50px;
-      .user-name{
+      .user{
+        font-size: 12px;
         float:left;
+        margin-left: 10px;
       }
       .user-nickname{
-        float:left;
+        color: gray;
       }
-      .time{
-        float:left;
+      .user-time{
+        color: gray;
       }
     }
     .tweet-text{
