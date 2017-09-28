@@ -3,16 +3,16 @@
     %a.profile-card-back-img{:href => ""}
       %img{:alt => "", :src => ""}
     .profile-content
-      %a.profile-card-me-img{:href => ""}
-        %img{:alt => "", :src => ""}
+      %a.profile-card-me-img
+        = image_tag current_user.image, size: '50x50' if current_user.image.present?
       .profile-card-user-fields
         .profile-card-username
-          Seeeesh!!!
+          = current_user.name
           %i.fa.fa-lock
         .profile-card-idname
           %a.user-edit
             = link_to users_path(current_user) do
-              @seeeesh
+              = "@#{current_user.nickname}"
       .ProfileCardStatus
         %ul.ProfileCardStatus-statuslist
           %li.ProfileCardStatus-status

@@ -2,6 +2,7 @@
   .tweet-box
     .tweet-user
       .profile-image
+        = image_tag current_user.image, size: '50x50' if current_user.image.present?
       .tweet-form
         = form_for @tweet do |f|
           .tweet-form-top

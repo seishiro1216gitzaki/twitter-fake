@@ -11,9 +11,10 @@
         .profile-content{
           background-color: #fff;
 
-          .profile-card-me-img{
-            height: 20px;
-            width: 20px;
+          .profile-card-me-img img{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
           }
 
           .profile-card-user-fields{
@@ -21,6 +22,10 @@
             top: 103px;
             left: 90px;
             width: 185px;
+            a{
+              text-decoration: none;
+              color: black;
+            }
           }
 
           .ProfileCardStatus{
