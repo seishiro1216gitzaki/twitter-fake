@@ -9,7 +9,8 @@
             %li.gloval-nav-home
               %i.fa.fa-home.fa-2x
               %span.text
-                HOME
+                = link_to tweets_path(current_user) do
+                  HOME
             %li.gloval-nav-moment
               %i.fa.fa-bolt.fa-2x
               %span.text
