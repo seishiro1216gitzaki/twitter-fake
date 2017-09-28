@@ -6,7 +6,8 @@
         .AppContainer
           .ProfileCanopy-avatar
             .ProfileAvatar
-              %img{src: "081A9218.JPG", size: '200x200'}/
+              %a.ProfileAvatarImage
+                = image_tag current_user.image, size: '200x200' if current_user.image.present?
       .ProfileCanopy-navBar
         .navBar-container
           .navBar-container--child
@@ -61,9 +62,9 @@
           .LeftContentInner
             .LeftContentInner--Profile
               .Profile-name
-                Sesh
+                = current_user.name
               .Profile-nickname
-                @seshshshs
+                = "@#{current_user.nickname}"
               .Profile-location
                 japan
               .profile-joinDate
@@ -86,41 +87,21 @@
                   ツイートと返信
                 .TweetsHeader-menu--media
                   メディア
-          .tweet
-            .profile-pic
-              %img{:alt => "", :src => ""}/
-            .user-info
-              .user-name
-                jojo
-              .user-nickname
-                @jojojojo
-              .time
-                12345日
-            .tweet-text
-              今年も残り4か月！
-            .tweet-pic
-            .tweet-footer
-              .tweet-footer__reply
-                .tweet-footer__reply--button
-                  %i.fa.fa-comment-o
-                .tweet-footer__reply--count
-                  12
-              .tweet-footer__retweet
-                .tweet-footer__retweet--button
-                  %i.fa.fa-retweet
-                .tweet-footer__retweet--count
-                  43
-              .tweet-footer__favorite
-                .tweet-footer__favorite--button
-                  %i.fa.fa-thumbs-o-up
-                .tweet-footer__favorite--count
-                  666
-              .tweet-footer__dm
-                .tweet-footer__dm--button
-                  %i.fa.fa-envelope-o
-                .tweet-footer__dm--count
-                  888
-                  .RightContent-right
+          - current_user.tweets.each do |tweet|
+            .tweet
+              .profile-pic
+                = image_tag tweet.user.image, size: '50x50' if current_user.image.present?
+              .user-info
+                .user.user-name
+                  = current_user.name
+                .user.user-nickname
+                  = "@#{current_user.nickname}"
+                .user.user-time
+                  = time_ago_in_words tweet.created_at
+              .tweet-text
+                = tweet.content
+              .tweet-pic
+                = image_tag tweet.image, size: '200x200' if tweet.image.present?
       .sidebar-right
         .sidebar-right--top
           .sidebar-right--top--recomend
