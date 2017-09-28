@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
     region: 'us-west-1'
   }
 
-  config.fog_directory  = 'upload-testseishiro'
-  config.asset_host = 'https://s3-us-west-1.amazonaws.com/upload-testseishiro'
+  config.fog_directory  = 'twitter-fake-upload'
+  config.asset_host = 'https://s3-us-west-1.amazonaws.com/twitter-fake-upload'
 end
