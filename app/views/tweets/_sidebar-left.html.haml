@@ -1,7 +1,7 @@
 .sidebar-left
   .profile-card
-    %a.profile-card-back-img{:href => ""}
-      %img{:alt => "", :src => ""}
+    %a.profile-card-back-img
+      = image_tag current_user.image, size: '' if current_user.image.present?
     .profile-content
       %a.profile-card-me-img
         = image_tag current_user.image, size: '50x50' if current_user.image.present?
@@ -19,7 +19,7 @@
             %span.u-block
               ツイート
             %span.value
-              1,999
+              = current_user.tweets.count
           %li.ProfileCardStatus-status
             %span.u-block
               フォロー
