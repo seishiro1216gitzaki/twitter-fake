@@ -6,7 +6,7 @@
       .tweet-form
         = form_for @tweet do |f|
           .tweet-form-top
-            = f.text_field :content, placeholder:'type a message', class:'tweet'
+            = f.text_field :content, placeholder:'今何してますか？', class:'tweetForm'
           = f.label :image, class:'tweet-image' do
             = f.file_field :image, class:'image'
             %i.fa.fa-image
