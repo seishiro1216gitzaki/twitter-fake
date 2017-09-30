@@ -14,12 +14,14 @@
         bottom: 0;
         height: 320px;
         width: 100%;
-        background-color: green;
+        overflow: hidden;
         .AppContainer{
           height: 100%;
-          position: relative;
+          position: absolute;
           max-width: 1190px;
           margin: 0 auto;
+          top: -120px;
+          left: 150px;
           .ProfileCanopy-avatar{
             bottom: -87px;
             left: 10px;
@@ -42,54 +44,54 @@
         }
       }
     }
-    .navBar-container{
-      max-width: 1190px;
-      margin: 0 auto;
-      .navBar-container--child{
-        margin: 0 -5px;
-        .Profile-nav{
-          margin-left: 30%;
-          background-color: red;
-          height: 60px;
-          width: 100%;
-          .Profile-nav--item{
-            display: inline-block;
-            .ProfileNav-stat{
-              height: 60px;
-              border-bottom: 0 solid;
-              display: block;
-              line-height: 1;
-              padding: 14px 15px 7px;
+    .ProfileCanopy-navBar{
+      background-color: #fff;
+      .navBar-container{
+        max-width: 1190px;
+        margin: 0 auto;
+        .navBar-container--child{
+          margin: 0 -5px;
+          .Profile-nav{
+            margin-left: 30%;
+            height: 60px;
+            width: 100%;
+            .Profile-nav--item{
+              display: inline-block;
+              &__UserEdit{
               box-sizing: border-box;
-              .ProfaileNav-label{
-                font-weight: bold;
-                font-size: 12px;
-                color: #657786;
-                @include clearfix();
-              }
-              .ProfaileNav-value{
-                font-weight: bold;
-                padding-top: 3px;
-              }
-              .Profile-nav--item__UserEdit{
-                background-color: #fff;
-                box-sizing: border-box;
-                height: 59px;
-                padding: 12px 0 0 2px;
-                position: absolute;
-                right: 0;
-                top: 0;
+              height: 30px;
+              border: 1px solid #e6ecf0;
+              border-radius: 15px;
+              left: 150px;
+              position: relative;
                 .edit-button{
-                  border-radius: 100px;
-                  box-shadow: none;
-                  cursor: pointer;
-                  font-size: 14px;
+                box-shadow: none;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 20px;
+                padding: 6px 16px;
+                position: relative;
+                text-align: center;
+                white-space: nowrap;
+                }
+              }
+              .ProfileNav-stat{
+                height: 60px;
+                border-bottom: 0 solid;
+                display: block;
+                line-height: 1;
+                padding: 14px 15px 7px;
+                box-sizing: border-box;
+                .ProfaileNav-label{
                   font-weight: bold;
-                  line-height: 20px;
-                  padding: 6px 16px;
-                  position: relative;
-                  text-align: center;
-                  white-space: nowrap;
+                  font-size: 12px;
+                  color: #657786;
+                  @include clearfix();
+                }
+                .ProfaileNav-value{
+                  font-weight: bold;
+                  padding-top: 3px;
                 }
               }
             }
@@ -109,8 +111,6 @@
         padding: 0 5px;
         float: left;
         width: 25%;
-        background-color: #fff;
-        border: 1px solid #e6ecf0;
         .LeftContent{
           margin: 0 -5px;
           .LeftContentInner{
@@ -121,6 +121,7 @@
               .Profile-name{
                 line-height: 1px;
                 margin-bottom: 15px;
+                font-weight: bold;
               }
               .Profile-nickname{
                 margin-bottom: 15px;
@@ -137,18 +138,20 @@
               padding: 0 15px 0 15px;
               .PicHeader{
                 margin-bottom: 8px;
-                .PicHeader--icon{
-                  min-width: 18px;
-                }
                 .PicHeader--title{
                   line-height: 1;
-                  padding-left: 22px;
                 }
               }
               .PicBox{
-                margin: -8px 0 0 -8px;
+                margin: 0 0 0 -8px;
                 max-height: 178px;
                 overflow: hidden;
+                padding-left: 8px;
+                &--pic img{
+                  border-radius: 5px;
+                  margin-bottom: -5px;
+
+                }
               }
             }
           }
@@ -196,6 +199,8 @@
             width: 50px;
             float:left;
             margin-right: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
           }
           .user-info{
             @include clearfix();

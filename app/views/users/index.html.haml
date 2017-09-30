@@ -3,6 +3,8 @@
   .ProfileCanopy-header-box
     .ProfileCanopy-header-box--inner
       .ProfileCanopy-header
+        %a.ProfileBackImage
+          = image_tag current_user.image, size: '50%' if current_user.image.present?
         .AppContainer
           .ProfileCanopy-avatar
             .ProfileAvatar
@@ -63,18 +65,24 @@
             .LeftContentInner--Profile
               .Profile-name
                 = current_user.name
+                %i.fa.fa-lock
               .Profile-nickname
                 = "@#{current_user.nickname}"
               .Profile-location
+                %i.fa.fa-globe
                 japan
               .profile-joinDate
+                %i.fa.fa-calendar
                 2010年7月に登録
             .LeftContentInner--Pic
               .PicHeader
-                .PicHeader--icon
                 .PicHeader--title
+                  %i.fa.fa-picture-o
                   画像と動画
-              .PicBox
+              - current_user.tweets.each do |tweet|
+                .PicBox
+                  .PicBox--pic
+                    = image_tag tweet.image, size: '50x50' if tweet.image.present?
 
       .AppContainerMain--right
         .RightContent-tweets
@@ -87,10 +95,10 @@
                   ツイートと返信
                 .TweetsHeader-menu--media
                   メディア
-          - current_user.tweets.each do |tweet|
+          - @CurrentUserTweets.each do |tweet|
             .tweet
               .profile-pic
-                = image_tag tweet.user.image, size: '50x50' if current_user.image.present?
+                = image_tag current_user.image, size: '50x50' if current_user.image.present?
               .user-info
                 .user.user-name
                   = current_user.name
@@ -120,7 +128,7 @@
                 .profile-card-username
                   kkkkkkkk
                 .profile-card-id-name
-                  @milf
+                  @tttt
           .sidebar-right--top--find
             知り合いを見つけましょう
         .sidebar-right--bottom
