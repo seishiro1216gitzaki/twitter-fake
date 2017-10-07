@@ -30,7 +30,8 @@
               %i.fa.fa-search
             %ul.nav.right-actions
               %li.me
-                %a#user-profile.btn-profile{:href=> "https://www.google.co.jp/"}
+                %a.user-profile
+                  = image_tag current_user.image, size: '35x35' if current_user.image.present?
               %li.topbar-tweet-btn
                 %ul.new-tweet-btn
                   %span.text
