@@ -4,12 +4,12 @@
     .ProfileCanopy-header-box--inner
       .ProfileCanopy-header
         %a.ProfileBackImage
-          = image_tag current_user.image, size: '50%' if current_user.image.present?
+          = image_tag @user.image, size: '50%' if @user.image.present?
         .AppContainer
           .ProfileCanopy-avatar
             .ProfileAvatar
               %a.ProfileAvatarImage
-                = image_tag current_user.image, size: '200x200' if current_user.image.present?
+                = image_tag @user.image, size: '200x200' if @user.image.present?
       .ProfileCanopy-navBar
         .navBar-container
           .navBar-container--child
@@ -66,10 +66,10 @@
           .LeftContentInner
             .LeftContentInner--Profile
               .Profile-name
-                = current_user.name
+                = @user.name
                 %i.fa.fa-lock
               .Profile-nickname
-                = "@#{current_user.nickname}"
+                = "@#{@user.nickname}"
               .Profile-location
                 %i.fa.fa-globe
                 japan
@@ -101,12 +101,12 @@
           - @usertweets.each do |tweet|
             .tweet
               .profile-pic
-                = image_tag current_user.image, size: '50x50' if current_user.image.present?
+                = image_tag current_user.image, size: '50x50' if @user.image.present?
               .user-info
                 .user.user-name
-                  = current_user.name
+                  = @user.name
                 .user.user-nickname
-                  = "@#{current_user.nickname}"
+                  = "@#{@user.nickname}"
                 .user.user-time
                   = time_ago_in_words tweet.created_at
               .tweet-text

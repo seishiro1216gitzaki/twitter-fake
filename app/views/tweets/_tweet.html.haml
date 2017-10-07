@@ -4,7 +4,8 @@
       = image_tag tweet.user.image, size: '50x50' if tweet.user.image.present?
     .user-info
       .user.user-name
-        = tweet.user.name
+        = link_to user_path(tweet.user_id) do
+          = tweet.user.name
       .user.user-nickname
         = "@#{tweet.user.nickname}"
       .user.user-time
