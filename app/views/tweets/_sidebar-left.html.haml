@@ -24,12 +24,12 @@
             %span.u-block
               フォロー
             %span.value
-              1,999
+              = current_user.followings.count
           %li.ProfileCardStatus-status
             %span.u-block
               フォロワー
             %span.value
-              1,999
+              = current_user.followers.count
   .follow-request
     .follow-request-module
       %a.follow-request-btn{:href => ""} 10件の新しいフォローリクエスト
@@ -39,7 +39,7 @@
         東京のトレンド
       .trends-inner-list
         .trends-name
-          鬱フェス
+          天気
         .trends-count
           3,123件のツイート
       .trends-inner-list
