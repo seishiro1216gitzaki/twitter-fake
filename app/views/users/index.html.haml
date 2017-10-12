@@ -17,37 +17,39 @@
               .Profile-nav
                 %ul.Profile-nav--list
                   %li.Profile-nav--item.Profile-nav--item__tweets
-                    %a.ProfileNav-stat
+                    .ProfileNav-stat
                       %span.ProfaileNav-label
                         ツイート
                       %span.ProfaileNav-value
                         = current_user.tweets.count
                   %li.Profile-nav--item.Profile-nav--item__following
-                    %a.ProfileNav-stat
+                    .ProfileNav-stat
                       %span.ProfaileNav-label
-                        フォロー
+                        = link_to following_user_path(current_user) do
+                          フォロー
                       %span.ProfaileNav-value
                         = current_user.followings.count
                   %li.Profile-nav--item.Profile-nav--item__followers
-                    %a.ProfileNav-stat
+                    .ProfileNav-stat
                       %span.ProfaileNav-label
-                        フォロワー
+                        = link_to followers_user_path(current_user) do
+                          フォロワー
                       %span.ProfaileNav-value
                         = current_user.followers.count
                   %li.Profile-nav--item.Profile-nav--item__favorites
-                    %a.ProfileNav-stat
+                    .ProfileNav-stat
                       %span.ProfaileNav-label
                         いいね
                       %span.ProfaileNav-value
                         123
                   %li.Profile-nav--item.Profile-nav--item__list
-                    %a.ProfileNav-stat
+                    .ProfileNav-stat
                       %span.ProfaileNav-label
                         リスト
                       %span.ProfaileNav-value
                         8
                   %li.Profile-nav--item.Profile-nav--item__moments
-                    %a.ProfileNav-stat
+                    .ProfileNav-stat
                       %span.ProfaileNav-label
                         モーメント
                       %span.ProfaileNav-value
