@@ -22,12 +22,14 @@
               = current_user.tweets.count
           %li.ProfileCardStatus-status
             %span.u-block
-              フォロー
+              = link_to following_user_path(current_user) do
+                フォロー
             %span.value
               = current_user.followings.count
           %li.ProfileCardStatus-status
             %span.u-block
-              フォロワー
+              = link_to followers_user_path(current_user) do
+                フォロワー
             %span.value
               = current_user.followers.count
   .follow-request
