@@ -97,7 +97,7 @@
           - @user.followers.each do |user|
             .followings-followers
               .followings-followers--profile-pic
-                = image_tag user.image, size: '50x50' if user.image.present?
+                = image_tag user.image, size: '200x200' if user.image.present?
               .followings-followers--user-info
                 .user.user-name
                   = user.name
