@@ -1,7 +1,8 @@
 .sidebar-left
   .profile-card
-    %a.profile-card-back-img
-      = image_tag current_user.image, size: '' if current_user.image.present?
+    .profile-card-box
+      %a.profile-card-back-img
+        = image_tag current_user.image, size: '' if current_user.image.present?
     .profile-content
       %a.profile-card-me-img
         = image_tag current_user.image, size: '50x50' if current_user.image.present?
