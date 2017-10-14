@@ -1,14 +1,5 @@
 # config valid only for current version of Capistrano
 lock '3.9.0'
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "~/.rbenv/shims:~/.rbenv/bin:$PATH",
-  AWS_REGION: ENV['AWS_REGION'],
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-        AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-}
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-set :sidekiq_queue, :carrierwave
 
 set :application, 'twitter-fake'
 set :repo_url,  'git@github.com:seishiro1216gitzaki/twitter-fake.git'
