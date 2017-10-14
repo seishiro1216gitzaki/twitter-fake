@@ -4,7 +4,7 @@
     .ProfileCanopy-header-box--inner
       .ProfileCanopy-header
         %a.ProfileBackImage
-          = image_tag current_user.image, size: '50%' if current_user.image.present?
+          = image_tag current_user.image, size: '' if current_user.image.present?
         .AppContainer
           .ProfileCanopy-avatar
             .ProfileAvatar
