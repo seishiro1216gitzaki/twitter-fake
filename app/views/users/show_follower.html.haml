@@ -1,6 +1,140 @@
-- @user.followers.each do |user|
-  %table
-    %tr
-      %td
-        = user.name
-      %td= link_to '詳細', user_path(user)
+= render 'user-topbar'
+.page-container
+  .ProfileCanopy-header-box
+    .ProfileCanopy-header-box--inner
+      .ProfileCanopy-header
+        %a.ProfileBackImage
+          = image_tag @user.image, size: '50%' if @user.image.present?
+        .AppContainer
+          .ProfileCanopy-avatar
+            .ProfileAvatar
+              %a.ProfileAvatarImage
+                = image_tag @user.image, size: '200x200' if @user.image.present?
+      .ProfileCanopy-navBar
+        .navBar-container
+          .navBar-container--child
+            .navBar-container--child__mini
+              .Profile-nav
+                %ul.Profile-nav--list
+                  %li.Profile-nav--item.Profile-nav--item__tweets
+                    .ProfileNav-stat
+                      %span.ProfaileNav-label
+                        ツイート
+                      %span.ProfaileNav-value
+                        = @user.tweets.count
+                  %li.Profile-nav--item.Profile-nav--item__following
+                    .ProfileNav-stat
+                      %span.ProfaileNav-label
+                        = link_to following_user_path(@user) do
+                          フォロー
+                      %span.ProfaileNav-value
+                        = @user.followings.count
+                  %li.Profile-nav--item.Profile-nav--item__followers
+                    .ProfileNav-stat
+                      %span.ProfaileNav-label
+                        = link_to followers_user_path(@user) do
+                          フォロワー
+                      %span.ProfaileNav-value
+                        = @user.followers.count
+                  %li.Profile-nav--item.Profile-nav--item__favorites
+                    .ProfileNav-stat
+                      %span.ProfaileNav-label
+                        いいね
+                      %span.ProfaileNav-value
+                        123
+                  %li.Profile-nav--item.Profile-nav--item__list
+                    .ProfileNav-stat
+                      %span.ProfaileNav-label
+                        リスト
+                      %span.ProfaileNav-value
+                        8
+                  %li.Profile-nav--item.Profile-nav--item__moments
+                    .ProfileNav-stat
+                      %span.ProfaileNav-label
+                        モーメント
+                      %span.ProfaileNav-value
+                        9
+                  %li.Profile-nav--item.Profile-nav--item__UserEdit
+                    .edit-action
+                      .edit-button
+                        = link_to edit_user_path(current_user) do
+                          プロフィール編集
+  .AppContainer
+    .AppContainerMain
+      .AppContainerMain--left
+        .LeftContent
+          .LeftContentInner
+            .LeftContentInner--Profile
+              .Profile-name
+                = @user.name
+                %i.fa.fa-lock
+              .Profile-nickname
+                = "@#{@user.nickname}"
+              .Profile-location
+                %i.fa.fa-globe
+                japan
+              .profile-joinDate
+                %i.fa.fa-calendar
+                2010年7月に登録
+              = render 'follow_form' if user_signed_in?
+            .LeftContentInner--Pic
+              .PicHeader
+                .PicHeader--title
+                  %i.fa.fa-picture-o
+                  画像と動画
+              - current_user.tweets.each do |tweet|
+                .PicBox
+                  .PicBox--pic
+                    = image_tag tweet.image, size: '50x50' if tweet.image.present?
+
+      .AppContainerMain--right
+        .RightContent-tweets
+          .TweetsHeader
+            .TweetsHeaderSpace
+              .TweetsHeader-menu
+                .TweetsHeader-menu--tweets
+                  フォロワー一覧
+          - @user.followers.each do |user|
+            .followings-followers
+              .followings-followers--profile-pic
+                = image_tag user.image, size: '50x50' if user.image.present?
+              .followings-followers--user-info
+                .user.user-name
+                  = user.name
+                .user.user-nickname
+                  = "@#{user.nickname}"
+                .user.detail
+                  = link_to '詳細', user_path(user)
+      .sidebar-right
+        .sidebar-right--top
+          .sidebar-right--top--recomend
+            %h2.recomend-user
+              おすすめユーザー
+            .sidebar-right--top--recomend-list
+              %li.update
+                更新する
+              %li.see
+                全てを見る
+          .sidebar-right--top--list
+            .profile-content
+              %a.friends{:href => ""}
+                %img{:alt => "", :src => ""}
+              .profile-card-user-fields
+                .profile-card-username
+                  kkkkkkkk
+                .profile-card-id-name
+                  @tttt
+          .sidebar-right--top--find
+            知り合いを見つけましょう
+        .sidebar-right--bottom
+          .sidebar-right--bottom--list
+            %li.about
+              twitter
+            %li.about
+              twitter
+            %li.about
+              twitter
+            %li.about
+              twitter
+          .sidebar-right--bottom--advertisement
+            Twitter広告
