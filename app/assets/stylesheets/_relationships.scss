@@ -5,9 +5,21 @@
   background-color: #fff;
   margin: 10px;
   float: left;
-  .user.detail{
-    position: relative;
-    top: 120px;
-    right: -170px;
+  .followings-followers--profile-pic img{
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
   }
+  .followings-followers--user-info{
+    .user{
+      z-index: 2;
+      position: relative;
+    }
+    .user.detail{
+      position: relative;
+      top: 120px;
+      right: -170px;
+    }
+  }
+
 }
