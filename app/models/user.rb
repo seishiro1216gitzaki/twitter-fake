@@ -24,5 +24,6 @@ class User < ApplicationRecord
     following_relationships.find_by(following_id: other_user.id).destroy
   end
 
+  mount_uploader :image, ImageUploader
 
 end
