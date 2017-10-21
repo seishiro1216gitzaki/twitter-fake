@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017112639) do
+ActiveRecord::Schema.define(version: 20171021031825) do
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "follower_id"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20171017112639) do
     t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "watch_laters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "tweet_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_watch_laters_on_tweet_id", using: :btree
+    t.index ["user_id"], name: "index_watch_laters_on_user_id", using: :btree
   end
 
   add_foreign_key "tweets", "users"
