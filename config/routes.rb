@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
-  resources :tweets, only: [:index, :create, :destroy]
+  resources :tweets, only: [:index, :create, :destroy] do
+    resources :watch_laters, only: [:create]
+  end
 end
