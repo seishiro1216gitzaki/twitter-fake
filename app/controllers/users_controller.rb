@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.all
     @tweets = Tweet.order("created_at DESC")
     @CurrentUserTweets = current_user.tweets.order("created_at DESC")
+    @users = User.where.not(id: current_user.id).order("RAND()").limit(4)
   end
 
   def edit
