@@ -11,17 +11,21 @@
       .recomend-user{
         float: left;
       }
-      .update{
-        list-style: none;
-        float: left;
-      }
-      .see{
-        list-style: none;
-        float: left;
-      }
     }
     .sidebar-right--top--list{
       background-color: #fff;
+      .user-profile{
+        .profile-pic {
+          display:inline-block;
+          height: 50px;
+          width: 50px;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+        .user-info{
+          display:inline-block;
+        }
+      }
     }
     .sidebar-right--top--find{
       border: 1px solid #e6ecf0;
@@ -43,8 +47,3 @@
     }
   }
 }
-
-  // .sidebar-right--top__recomend
-  // .sidebar-right--top--list
-  //   .sidebar-right--top--list--user
-  // .sidebar-right--top--find
