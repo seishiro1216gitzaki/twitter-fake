@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tweets
   has_many :watch_laters
-  has_many :watch_later_tweets, through: :watch_laters
+  has_many :watch_later_tweets, through: :watch_laters, source: :tweet
 
   has_many :following_relationships,class_name:  "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followings, through: :following_relationships
