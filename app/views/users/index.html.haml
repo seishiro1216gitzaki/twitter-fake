@@ -128,8 +128,21 @@
                         = user.name
                     .user.user-nickname
                       = "@#{user.nickname}"
-          .sidebar-right--top--find
-            知り合いを見つけましょう
+        .sidebar-right--top
+          .sidebar-right--top--recomend
+            %h2.recomend-user
+              あとで見る
+            .sidebar-right--top--list
+              - @watch_laters_tweets.each do |watch_laters_tweet|
+                .user-profile
+                  .profile-pic
+                    = link_to user_path(@user) do
+                      = image_tag watch_laters_tweet.image,size: '50x50' if watch_laters_tweet.image.present?
+                  .user-info
+                    .user.user-name
+                      = watch_laters_tweet.content.truncate(10)
+        .sidebar-right--top--find
+          知り合いを見つけましょう
         .sidebar-right--bottom
           .sidebar-right--bottom--list
             %li.about
