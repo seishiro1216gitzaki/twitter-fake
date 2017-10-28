@@ -3,20 +3,17 @@
     .sidebar-right--top--recomend
       %h2.recomend-user
         おすすめユーザー
-      .sidebar-right--top--recomend-list
-        %li.update
-          更新する
-        %li.see
-          全てを見る
-    .sidebar-right--top--list
-      .profile-content
-        %a.friends{:href => ""}
-          %img{:alt => "", :src => ""}
-        .profile-card-user-fields
-          .profile-card-username
-            kkkkkkkk
-          .profile-card-id-name
-            @tttt
+      .sidebar-right--top--list
+        - @users.each do |user|
+          .user-profile
+            .profile-pic
+              = image_tag user.image, size: '50x50' if user.image.present?
+            .user-info
+              .user.user-name
+                = link_to user_path(user) do
+                  = user.name
+              .user.user-nickname
+                = "@#{user.nickname}"
     .sidebar-right--top--find
       知り合いを見つけましょう
   .sidebar-right--bottom
