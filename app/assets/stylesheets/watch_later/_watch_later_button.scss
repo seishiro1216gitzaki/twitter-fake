@@ -1,0 +1,25 @@
+.btn.btn-small{
+  color: #A9F5F2;
+  left: 450px;
+  margin: 5px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  width: 75px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(#A9F5F2 0%, #ffaaaa 100%);
+  background-image: linear-gradient(#A9F5F2 0%, #fff 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  }.btn:active{/*押したとき*/ -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);/*沈むように*/ box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: -webkit-linear-gradient(#A9F5F2 0%, #A9F5F2 100%);
+  background-image: linear-gradient(#A9F5F2 0%, #A9F5F2 100%);/*グラデーションを明るく*/
+}
