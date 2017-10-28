@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     @tweets = Tweet.order("created_at DESC")
     @CurrentUserTweets = current_user.tweets.order("created_at DESC")
     @users = User.where.not(id: current_user.id).order("RAND()").limit(4)
+    @watch_laters = current_user.watch_laters.select("tweet_id")
+    @watch_laters_tweets = Tweet.where(id: @watch_laters)
   end
 
   def edit
