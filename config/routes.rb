@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :tweets, only: [:index, :create, :destroy] do
     resources :watch_laters, only: [:create]
   end
+  resources :watch_laters, only: [:destroy]
 end
