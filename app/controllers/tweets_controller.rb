@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all.order("created_at DESC")
+    @users = User.order("RAND()").limit(4)
   end
 
   def create
