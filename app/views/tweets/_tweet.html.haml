@@ -39,4 +39,7 @@
         .tweet-footer__watch-later--button
           %i.fa.fa-plus
         .tweet-footer__watch-later--link
-          = link_to "後で見る", tweet_watch_laters_path(tweet), method: :post
+          - if current_user.watch_later?(tweet)
+            = render 'watch_laters/destroy', tweet: tweet
+          - else
+            = render 'watch_laters/create', tweet: tweet
