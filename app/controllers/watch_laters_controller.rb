@@ -8,4 +8,11 @@ class WatchLatersController < ApplicationController
     end
   end
 
+  def destroy
+    @watch_later = WatchLater.find(params[:id])
+    if @watch_later.destroy
+         redirect_to root_path
+    end
+  end
+
 end
