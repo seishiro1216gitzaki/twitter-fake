@@ -40,6 +40,6 @@
         /   %i.fa.fa-plus
         .tweet-footer__watch-later--link
           - if current_user.watch_later?(tweet)
-            = render 'watch_laters/destroy', tweet: tweet
+            = render 'watch_laters/already-add', tweet: tweet
           - else
             = render 'watch_laters/create', tweet: tweet
