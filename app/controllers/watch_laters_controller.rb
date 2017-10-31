@@ -1,4 +1,10 @@
 class WatchLatersController < ApplicationController
+  def index
+    @user = User.all
+    @watch_laters = current_user.watch_laters.select("tweet_id")
+    @watch_laters_tweets = Tweet.where(id: @watch_laters)
+    @users = User.where.not(id: current_user.id).order("RAND()").limit(4)
+  end
   def create
     @user_id = current_user.id
     @tweet_id = Tweet.find(params[:tweet_id]).id
