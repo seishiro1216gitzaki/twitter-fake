@@ -131,13 +131,13 @@
         .sidebar-right--top
           .sidebar-right--top--recomend
             %h2.recomend-user
-              あとで見る
+              = link_to user_watch_laters_path(current_user) do
+                あとで見る
             .sidebar-right--top--list
               - @watch_laters_tweets.each do |watch_laters_tweet|
                 .user-profile
                   .profile-pic
-                    = link_to user_path(@user) do
-                      = image_tag watch_laters_tweet.image,size: '50x50' if watch_laters_tweet.image.present?
+                    = image_tag watch_laters_tweet.image,size: '50x50' if watch_laters_tweet.image.present?
                   .user-info
                     .user.user-name
                       = watch_laters_tweet.content.truncate(10)
