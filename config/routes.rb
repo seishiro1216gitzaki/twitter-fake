@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :watch_laters, only: [:create]
   end
   resources :watch_laters, only: [:destroy]
+  resources :users do
+     resources :watch_laters, only: [:index]
+  end
 end
