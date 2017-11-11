@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @usertweets = @user.tweets.order("created_at DESC")
+    @users = User.where.not(id: current_user.id).order("RAND()").limit(4)
   end
 
   def following
