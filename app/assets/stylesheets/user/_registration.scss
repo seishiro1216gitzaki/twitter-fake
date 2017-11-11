@@ -1,0 +1,31 @@
+.signupbox{
+  width: 100%;
+  .signupbox--inner{
+    margin: 0 auto;
+    .signup{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    }
+    .field{
+    margin:0 auto;
+    color: #fff;
+    text-align: center;
+      .file_field{
+        font-size: 5px;
+      }
+      .text_field{
+        border-radius: 10px;
+        left: 500px;
+        width: 300px;
+        height: 30px;
+      }
+    }
+    .actions{
+      text-align: center;
+    }
+  }
+  .login{
+    text-align: center
+  }
+}
